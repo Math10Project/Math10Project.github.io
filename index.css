@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: #04052E;
 }
 
 .circle {
@@ -110,13 +110,50 @@ body {
 
 .container{
     display: flex;
-    justify-content: center;
+    justify-content:space-evenly;
+    padding: 30px;
+    
 }
 
-.members-button{
+.button{
     padding: 20px;
     color: black;
     background: white;
     border-radius: 90px;
-    transform: translateY(150px);
+}
+
+.even{
+    background-color: #DF3B57;
+}
+
+.odd{
+    background-color: #f38093;
+}
+
+body{
+    color: rgb(255, 255, 255);
+    font-family: "Rubik",sans-serif;
+    font-weight: 700;
+    text-align: justify;
+}
+
+.members *{
+    text-align: center;
+}
+
+.even,.odd, .even a, .odd a{
+    color: rgb(255, 255, 255);
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-family: "Rubik",sans-serif;
+    font-weight: 700;
+    text-align: justify;
+}
+
+.even h3,.odd h3, .even li, .odd li{
+    font-family: "Rubik",sans-serif;
+    font-style: italic;
+    text-decoration: underline;
 }
