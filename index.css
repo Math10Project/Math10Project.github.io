@@ -116,10 +116,12 @@ body {
 }
 
 .button{
+    width: 90px;
     padding: 20px;
     color: black;
     background: white;
     border-radius: 90px;
+    text-align: center;
 }
 
 .even{
