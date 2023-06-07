@@ -24,7 +24,7 @@ document.getElementById("greenhouse").onmouseover = event => {
     }
     
     iteration += 1 / 3;
-  }, 100); 
+  }, 60); 
 }
 
 document.getElementById("greenhouse").onmouseout = event => {  
@@ -45,7 +45,7 @@ document.getElementById("greenhouse").onmouseout = event => {
     }
     
     iteration += 1 / 3;
-  }, 100); 
+  },); 
 }
 
 let leaf = document.getElementById('leaf');
@@ -60,3 +60,23 @@ window.addEventListener('scroll', () => {
     hill5.style.left = value * 1.5 + 'px';
     hill4.style.left = value * -1.5 + 'px';
 })
+
+let slideIndex = [1,1];
+let slideId = ["row1"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  let i;
+  let x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
