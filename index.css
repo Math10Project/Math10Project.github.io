@@ -48,7 +48,7 @@ body{
     text-align: justify;
 }
 
-.row1 h1, .sec li{
+.row1 h1, .row2 h1, .sec li{
     font-family: "Rubik",sans-serif;
     font-style: italic;
     text-decoration: underline;
@@ -100,31 +100,37 @@ header {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.sec2 {
+    position: relative;
+    padding: 100px;
+    background: #314f28;
+}
+
 .sec {
     position: relative;
     padding: 100px;
     background: #003329;
     
 }
-.sec img {
+.sec img, .sec2 img {
 width: 100vh;
 
 }
 
 
-.sec h1{
+.sec h1, .sec2 h1{
     font-size: 3em;
     color: white;
     margin-bottom: 10px;
 }
 
-.sec li{
+.sec li, .sec2 li{
     font-size: 2em;
     color: white;
     margin-bottom: 10px;
 }
 
-.sec p {
+.sec p, .sec2 p {
     font-size: 1em;
     color: white;
     font-size: 1.5em;
@@ -132,14 +138,14 @@ width: 100vh;
 }
 
 
-.row1 {
+.row1, .row2 {
     display: flex;
     display: none;
 }
 
-.row1 img {
+.row1 img, .row2 img {
     height: 500px;
-    width: 500px;
+    width: auto;
     display: inline-block;
     margin-left: 35%;
 }
@@ -196,6 +202,8 @@ color: black;
 
 #global-warming {
     visibility: hidden;
+    position: absolute;
+    top:400px
 }
 
 #glaciers:hover {

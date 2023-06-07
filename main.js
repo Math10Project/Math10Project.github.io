@@ -62,7 +62,7 @@ window.addEventListener('scroll', () => {
 })
 
 let slideIndex = [1,1];
-let slideId = ["row1"]
+let slideId = ["row1", "row2"]
 showSlides(1, 0);
 showSlides(1, 1);
 
