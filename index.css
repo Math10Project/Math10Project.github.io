@@ -149,6 +149,7 @@ width: 100vh;
     display: inline-block;
     margin-left: 35%;
 }
+
 .column h1{
     display: inline-block;
     margin-left: 35%;
@@ -193,6 +194,11 @@ color: black;
   padding: 0rem clamp(1rem, 2vw, 3rem);
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
   text-align: center;
+}
+
+#glaciers {
+    display: inline-block;
+    margin-left: 25%;
 }
 
 #greenhouse:hover {
