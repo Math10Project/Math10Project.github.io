@@ -1,54 +1,62 @@
-var naLink = document.getElementById("n-a");
-var saLink = document.getElementById("s-a");
-var eurLink = document.getElementById("eur");
-var afrLink = document.getElementById("afr");
-var asiLink = document.getElementById("asi");
-var ausLink = document.getElementById("aus");
-var naAbout = document.getElementById("north-america");
-var saAbout = document.getElementById("south-america");
-var eurAbout = document.getElementById("europe");
-var afrAbout = document.getElementById("africa");
-var asiAbout = document.getElementById("asia");
-var ausAbout = document.getElementById("australia");
+const letters = "123456789";
 
-var link = [naLink, saLink, eurLink, afrLink, asiLink, ausLink];
+let interval = null;
 
-var about = [naAbout, saAbout, eurAbout, afrAbout, asiAbout, ausAbout];
+document.getElementById("greenhouse").onmouseover = event => {  
+  let iteration = 0;
+  
+  clearInterval(interval);
+  
+  interval = setInterval(() => {
+    event.target.innerText = event.target.innerText
+      .split("")
+      .map((letter, index) => {
+        if(index < iteration) {
+          return event.target.dataset.value[index];
+        }
+      
+        return letters[Math.floor(Math.random() * 9)]
+      })
+      .join("");
+    
+    if(iteration >= event.target.dataset.value.length){ 
+      clearInterval(interval);
+    }
+    
+    iteration += 1 / 3;
+  }, 100); 
+}
 
+document.getElementById("greenhouse").onmouseout = event => {  
+  let iteration = 0;
+  
+  clearInterval(interval);
+  
+  interval = setInterval(() => {
+    event.target.innerText = event.target.innerText
+      .split("")
+      .map((letter, index) => {
+        return "-"
+      })
+      .join("");
+    
+    if(iteration >= event.target.dataset.value.length){ 
+      clearInterval(interval);
+    }
+    
+    iteration += 1 / 3;
+  }, 100); 
+}
 
-link[0].addEventListener("mouseover", (e) => {
-    about[0].style.display = "block";
-});
-link[0].addEventListener("mouseleave", (e) => {
-    about[0].style.display = "none";
-});
-link[1].addEventListener("mouseover", (e) => {
-    about[1].style.display = "block";
-});
-link[1].addEventListener("mouseleave", (e) => {
-    about[1].style.display = "none";
-});
-link[2].addEventListener("mouseover", (e) => {
-    about[2].style.display = "block";
-});
-link[2].addEventListener("mouseleave", (e) => {
-    about[2].style.display = "none";
-});
-link[3].addEventListener("mouseover", (e) => {
-    about[3].style.display = "block";
-});
-link[3].addEventListener("mouseleave", (e) => {
-    about[3].style.display = "none";
-});
-link[4].addEventListener("mouseover", (e) => {
-    about[4].style.display = "block";
-});
-link[4].addEventListener("mouseleave", (e) => {
-    about[4].style.display = "none";
-});
-link[5].addEventListener("mouseover", (e) => {
-    about[5].style.display = "block";
-});
-link[5].addEventListener("mouseleave", (e) => {
-    about[5].style.display = "none";
-});
+let leaf = document.getElementById('leaf');
+let hill4 = document.getElementById('hill4');
+let hill5 = document.getElementById('hill5');
+
+window.addEventListener('scroll', () => {
+    let value = window.scrollY;
+
+    leaf.style.top = value * -1.5 + 'px';
+    leaf.style.left = value * 1.5 + 'px';
+    hill5.style.left = value * 1.5 + 'px';
+    hill4.style.left = value * -1.5 + 'px';
+})
